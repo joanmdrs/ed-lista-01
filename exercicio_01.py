@@ -1,9 +1,3 @@
-# 1. Inventário de Itens com Restrições
-# Implemente um sistema que permita cadastrar produtos com os campos: nome, quantidade, categoria e preço.
-# - Nome não pode se repetir
-# - Quantidade e preço devem ser positivos
-# Sem uso de dict ou set. Use apenas listas e funções.
-
 # Decidi separar o código em duas classes. A classe Produto que representa os dados de um produto. E a classe Inventário que contém a lógica da funcionalidade de cadastro.
 
 # Classe que define a instância de Produto

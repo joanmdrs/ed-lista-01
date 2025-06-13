@@ -25,9 +25,9 @@ Ao final do processo, a lista preenchida é retornada.
 def realizar_cadastro_dos_candidatos():
     
     lista_candidatos = []
-    
+    print("SISTEMA PARA CADASTRO DE 10 CANDIDATOS")
     for i in range(10):
-        print(f"Cadastrar candidato nº {i + 1}\n")
+        print(f"\nCadastrar candidato nº {i + 1}\n")
         nome = input("Nome: ")
         nota_conhecimento = float(input("Nota de conhecimento: "))
         nota_comunicacao = float(input("Nota de comunicação: "))
@@ -64,7 +64,7 @@ O método exibir_resultados tem como objetivo exibir o resultado final, exibindo
 """ 
 def exibir_resultados(candidatos):
     print("\nRESULTADO DA SELEÇÃO")
-    posicao = 0
+    posicao = 1
     for c in candidatos:
         print(f"{posicao}. {c.nome} - Final: {c.nota_final:.2f} (Conhecimento: {c.nota_conhecimento}, Comunicação: {c.nota_comunicacao})")
         posicao += 1
@@ -80,8 +80,7 @@ def main():
     lista_candidatos_ordenada = ordenar_lista_de_candidatos(candidatos)
     exibir_resultados(lista_candidatos_ordenada)
 
-if __name__ == "__main__":
-    main()
+main()
                 
         
               
