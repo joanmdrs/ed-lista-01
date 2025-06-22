@@ -21,5 +21,5 @@ def bubble_sort(lista):
     return lista
 
 lista = [50, 12, 5, 69, 1, 56, 10, 2]
-ordenada = bubble_sort(lista)
-print("Lista ordenada:", ordenada)
+lista_ordenada = bubble_sort(lista)
+print("Lista ordenada:", lista_ordenada)
