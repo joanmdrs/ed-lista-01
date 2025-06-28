@@ -35,7 +35,6 @@ def quick_sort(lista):
 
     return quick_sort(menores) + [pivo] + quick_sort(maiores)
 
-# Teste
 lista = [50, 12, 5, 69, 1, 56, 10, 2]
 lista_ordenada = quick_sort(lista)
 print("Lista ordenada:", lista_ordenada)
