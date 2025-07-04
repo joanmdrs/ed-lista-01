@@ -1,20 +1,23 @@
-#Questão 1:
 
-"""Desenvolva um jogo da forca. O programa terá uma lista de palavras lidas de uma lista e escolherá uma palavra aleatoriamente. O jogador vai tentar descobrir essa palavra, mas só poderá errar 6 vezes antes de ser enforcado.
 
-Digite uma letra: A
--> Você errou pela 1ª vez. Tente de novo!
+""" 
+Para implementar esta questão, primeiro foi feito a importação da biblioteca random, para poder realizar o sorteio de uma palavra. 
 
-Digite uma letra: O
-A palavra é: _ _ _ _ O
+Após isso, temos a definição da lista de palavras. 
 
-Digite uma letra: E
-A palavra é: _ E _ _ O
+Em seguida, é feito o sorteio da palavra, e definido uma lista tentativa[] para armazenar as letras que o usuário acertar. Também é executado um loop for para preencher a lista de tentativa com o caractere "_". 
 
-Digite uma letra: S
--> Você errou pela 2ª vez. Tente de novo!
+A variável erro é inicializada em 0, e a mesma tem como função armazenar a quantidade de erros do usuário, assim como servir de variável de controle para o lopp While. 
 
-Quando errar pela 6ª vez imprimir: Enforcado e exibir a palavra correta
+Desse modo, o loop While se mantém enquanto a quantidade de erros seja menor que 6, mas que também não exista o caractere "_" na lista tentativa[]. 
+
+Dentro do While, o programa executa um input que solicita uma letra ao usuário. 
+
+Após isso, o programa primeiro verifica se a letra pertence a palavra sorteada. Caso seja true, o programa identifica a(s) posição(es) da letra na palavra sorteada, e armazena em um index específico da lista tentativa[]. Caso seja false, o programa notifica o usuário a sua quantidade de erros. 
+
+No fim da estrutura presente dentro do loop While, é exibido o status da tentativa. 
+
+Fora do loop While, o programa verifica a quantidade de erros do usuário, caso seja igual a 6, exibe que o usuário perdeu e exibe a palavra correta. Caso contrário, informa que ele acertou a palavra. 
 """
 import random
 
@@ -22,26 +25,24 @@ lista_palavras = ["casa", "bola", "gato", "livro", "mesa", "papel", "janela", "c
 
 palavra_sorteada = random.choice(lista_palavras)
 
-tam = len(palavra_sorteada)
 tentativa = []
+tam = len(palavra_sorteada)
 
 for i in range(tam):
     tentativa.append("_")
 erro = 0
 
-print("Palavra sorteada: ", palavra_sorteada)
 while erro < 6 and "_" in tentativa:
     
     letra = input("Digite uma letra: ")
-    
-    if letra.lower() not in palavra_sorteada:
-        erro += 1
-        print(f"Você errou pela {erro}º vez. Tente de novo.")
     
     if letra in palavra_sorteada:
         for i in range(len(palavra_sorteada)):
             if palavra_sorteada[i] == letra:
                 tentativa[i] = letra
+    else:      
+        erro += 1
+        print(f"Você errou pela {erro}º vez. Tente de novo.")
             
     print(" ".join(tentativa)) 
 
